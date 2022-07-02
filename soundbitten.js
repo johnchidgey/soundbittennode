@@ -3,7 +3,7 @@
 'use strict';
 
 const folderLocalPath = '/Users/johnchidgey/Documents/sites/engineered/data/soundbites/';
-const folderServerPath = '/app/soundbites'; // MODIFIED
+const folderServerPath = '/app/soundbites'; // MODIFIED T
 
 // Install jsdom
 var path = require('path');
