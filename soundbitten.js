@@ -23,8 +23,8 @@ var folderPath = ''; // MODIFIED
 
 // Extract all exiting SoundBite JSON Files from local storage
 try {
-  if(process.env.NODE_ENV === 'development') folderPath = folderLocalPath; // MODIFIED
-  else folderPath = folderServerPath; // MODIFIED
+  if(process.env.NODE_ENV === 'production') folderPath = folderServerPath; // MODIFIED
+  else folderPath = folderLocalPath; // MODIFIED
   var directoryList = fs.readdirSync(folderPath, { withFileTypes: true });
   directoryList.forEach(function (directory) {
     if (directory.isDirectory())
