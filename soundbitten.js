@@ -11,7 +11,7 @@ var fs = require('fs');
 var webSocket = require('ws');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
-var fetch = require("node-fetch");
+var fetch = require("node-fetch-commonjs");
 
 var podcastFileItems = [];
 var podcasts = [];
