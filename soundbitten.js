@@ -91,7 +91,7 @@ try {
  * WEB SOCKETS                                     *
  ***************************************************/
 
-var port = Number(process.env.PORT || 5001);
+var port = process.env.PORT || 3000;
 var proxied = process.env.PROXIED === 'true';
 var socketServer = new webSocket.Server({port: port});
 var titles = [];
