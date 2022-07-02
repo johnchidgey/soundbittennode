@@ -1,11 +1,9 @@
 {
   "dependencies": {
-    "express": "^4.18.1",
     "jsdom": "^20.0.0",
     "node-fetch-commonjs": "^3.1.1",
     "query-selector": "^2.0.0",
-    "ws": "^8.7.0",
-    "xmldom": "^0.6.0"
+    "ws": "^8.8.0"
   },
   "scripts": {
     "start": "node soundbitten.js"

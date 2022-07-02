@@ -1,4 +1,12 @@
 #!/usr/bin/env node
+/*
+ * Soundbitten v0.1 - Soundbite NodeJS Server Demo Application
+ *
+ * 3 July, 2022 - John Chidgey
+ *
+ * Companion Application for Soundbite Demo: https://johnchidgey.github.io/managesoundbites.html
+ * Manage Soundbite functionality requires this server to be running
+ */
 
 'use strict';
 
