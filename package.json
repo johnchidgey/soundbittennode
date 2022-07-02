@@ -1,4 +1,12 @@
 {
+  "name": "SoundBitten",
+  "description": "Server Component",
+  "version": "1.0.0",
+  "engines": {
+    "node": "17.9.1"
+  }
+},
+{
   "dependencies": {
     "jsdom": "^20.0.0",
     "node-fetch": "^2.6.1",
