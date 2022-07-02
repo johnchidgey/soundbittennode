@@ -30,7 +30,7 @@ try {
     if (directory.isDirectory())
       podcastFileItems.push({folder:directory.name});
     }); // End ForEach for Directories
-
+    console.log(podcastFileItems);
   podcastFileItems.forEach((podcast, index, fullArray) => {
     var podcastFolder = path.join(folderPath, podcast.folder);
     soundbitesLocal = [];
