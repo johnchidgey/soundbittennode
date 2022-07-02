@@ -103,6 +103,9 @@ var windowLimit = 50;
 var windowSize = 5000;
 var currentWindow = 0;
 var recentMessages = {};
+
+console.log(socketServer);
+
 function floodedBy(socket) {
     // To be called each time we get a message or connection attempt. If that address has been flooding us, we disconnect all open connections
     // from that address and return `true` to indicate that it should be ignored. (They will not be prevented from re-connecting after waiting
