@@ -1,1 +1,1 @@
-NODE_ENV='Heroku' node soundbitten.js
+node soundbitten.js
