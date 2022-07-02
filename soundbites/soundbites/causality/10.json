@@ -1,0 +1,42 @@
+[
+	{
+		"enabled": true,
+		"startTime": 1184,
+		"duration": 86,
+		"title": "Muggles",
+		"url": "https://mediastore.engineered.network/causality/Causality-E001.mp3",
+		"name": "John Chidgey",
+		"type": "node",
+		"address": "02ec5c61cff2be8207851d909b72c15ec27d16d5aeeecf74b9170cb1f8ee6e0d64"
+	},
+	{
+		"enabled": true,
+		"startTime": 1401,
+		"duration": 82,
+		"title": "Hoggle",
+		"url": "https://mediastore.engineered.network/causality/Causality-E001.mp3",
+		"name": "John Chidgey",
+		"type": "node",
+		"address": "02ec5c61cff2be8207851d909b72c15ec27d16d5aeeecf74b9170cb1f8ee6e0d64"
+	},
+	{
+		"enabled": true,
+		"startTime": 2380,
+		"duration": 97,
+		"title": "Fainted",
+		"url": "https://mediastore.engineered.network/causality/Causality-E001.mp3",
+		"name": "John Chidgey",
+		"type": "node",
+		"address": "02ec5c61cff2be8207851d909b72c15ec27d16d5aeeecf74b9170cb1f8ee6e0d64"
+	},
+	{
+		"enabled": true,
+		"startTime": 2988,
+		"duration": 44,
+		"title": "Wanderer",
+		"url": "https://mediastore.engineered.network/causality/Causality-E001.mp3",
+		"name": "John Chidgey",
+		"type": "node",
+		"address": "02ec5c61cff2be8207851d909b72c15ec27d16d5aeeecf74b9170cb1f8ee6e0d64"
+	}
+]

@@ -2,7 +2,8 @@
 
 'use strict';
 
-const folderPath = '/Users/johnchidgey/Documents/sites/engineered/data/soundbites/';
+const folderLocalPath = '/Users/johnchidgey/Documents/sites/engineered/data/soundbites/';
+const folderServerPath = '/soundbites/'; // MODIFIED
 
 // Install jsdom
 var path = require('path');
@@ -17,9 +18,12 @@ var soundbitesLocal = [];
 var soundbites = [];
 var soundbite = [{episode:"", enabled:"", startTime:"", duration:"", title:"", url:"", name:"", type:"", address:"", customKey:"", customValue:""}];
 var podcastFeedItems = [];
+var folderPath = ''; // MODIFIED
 
 // Extract all exiting SoundBite JSON Files from local storage
 try {
+  if(process.env.NODE_ENV === 'development') folderPath = folderLocalPath; // MODIFIED
+  else folderPath = folderServerPath; // MODIFIED
   var directoryList = fs.readdirSync(folderPath, { withFileTypes: true });
   directoryList.forEach(function (directory) {
     if (directory.isDirectory())
