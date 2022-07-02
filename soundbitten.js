@@ -3,7 +3,8 @@
 'use strict';
 
 const folderLocalPath = '/Users/johnchidgey/Documents/sites/engineered/data/soundbites/';
-const folderServerPath = '/app/soundbites'; // MODIFIED
+const folderServerPath = '/home/soundbittennode/soundbites'; // TD Server Working
+//const folderServerPath = '/app/soundbites'; // Heroku Attempt
 
 // Install jsdom
 var path = require('path');
@@ -12,6 +13,8 @@ var webSocket = require('ws');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 var fetch = require("node-fetch-commonjs");
+var https = require('https'); // Only required for TD Server WSS (Not Local)
+//var WebSocketServer = require('ws').Server; // Only required for TD Server WSS (Not Local)
 
 var podcastFileItems = [];
 var podcasts = [];
@@ -19,12 +22,12 @@ var soundbitesLocal = [];
 var soundbites = [];
 var soundbite = [{episode:"", enabled:"", startTime:"", duration:"", title:"", url:"", name:"", type:"", address:"", customKey:"", customValue:""}];
 var podcastFeedItems = [];
-var folderPath = ''; // MODIFIED
+var folderPath = '';
 
 // Extract all exiting SoundBite JSON Files from local storage
 try {
-  if(process.env.NODE_ENV === 'production') folderPath = folderServerPath; // MODIFIED
-  else folderPath = folderLocalPath; // MODIFIED
+  if(process.env.NODE_ENV === 'production') folderPath = folderServerPath;
+  else folderPath = folderLocalPath;
   var directoryList = fs.readdirSync(folderPath, { withFileTypes: true });
   directoryList.forEach(function (directory) {
     if (directory.isDirectory())
@@ -91,9 +94,20 @@ try {
  * WEB SOCKETS                                     *
  ***************************************************/
 
+if(process.env.NODE_ENV === 'production') { // TD Server Only
+  var privateKey = fs.readFileSync('/etc/letsencrypt/live/ws.techdistortion.com/privkey.pem', 'utf8'); // TD Server Only
+  var certificate = fs.readFileSync('/etc/letsencrypt/live/ws.techdistortion.com/fullchain.pem', 'utf8'); // TD Server Only
+  var credentials = { key: privateKey, cert: certificate }; // TD Server Only
+  var httpsServer = https.createServer(credentials); // TD Server Only
+}
+
 var port = process.env.PORT || 5001;
 var proxied = process.env.PROXIED === 'true';
-var socketServer = new webSocket.Server({port: port});
+if(process.env.NODE_ENV === 'production') { // TD Server Only
+  httpsServer.listen(port); // TD Server Only
+  var socketServer = new webSocket.Server({ server: httpsServer }); // TD Server Only
+}
+else var socketServer = new webSocket.Server({port: port}); // Local / Heroku
 var titles = [];
 var connections = [];
 
@@ -104,7 +118,7 @@ var windowSize = 5000;
 var currentWindow = 0;
 var recentMessages = {};
 
-console.log(socketServer);
+// console.log(socketServer);
 
 function floodedBy(socket) {
     // To be called each time we get a message or connection attempt. If that address has been flooding us, we disconnect all open connections
