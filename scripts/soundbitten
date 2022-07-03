@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+
+description="SoundBitten NodeJS Server"
+
+supervisor=supervise-daemon
+
+# Requires OpenRC >= 0.35
+directory=/home/soundbittennode
+
+command=/usr/bin/node
+command_args="soundbitten.js"
+command_user=root
+command_background=1
+
+# Ask process to terminate within 30 seconds, otherwise kill it
+retry="SIGTERM/30/SIGKILL/5"
+
+pidfile="/var/run/soundbittennode.pid"
+
+depend() {
+    need net localmount
+}
+
+start_pre() {
+    logger "$RC_SVCNAME starting"
+    export NODE_ENV="production"
+}

@@ -20,7 +20,7 @@ To run from command line:
 
 Modify the "folderLocalPath" [Local] or "folderServerPath" [Server] to where you're keeping your Soundbite per episode files. Example files are in this repo under /soundbites. Each directory must have an index.json that contains the Show Title and RSS URL. Soundbite per episode files are named x.json where x is the number of the episode. (eg: 1.json = Episode 1, 5.json = Episode 5)
 
-If you want to run it on your own server then its better to daemonise the process. I trust you know how to do that yourselves.
+If you want to run it on your own server then its better to daemonise the process. I trust you know how to do that yourselves for other platforms but if you want, I've shared my Alpine init.d script under /scripts/soundbitten
 
 **Managing Soundbites**
 
