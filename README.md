@@ -36,3 +36,4 @@ The client application (Demo here: https://johnchidgey.github.io/managesoundbite
 - Demo website: https://johnchidgey.github.io/managesoundbites.html
 - Demo Repo: https://github.com/johnchidgey/johnchidgey.github.io
 - NameSpace Proposal for improved Soundbites: https://github.com/Podcastindex-org/podcast-namespace/issues/61
+- Pull Request for Proposal: https://github.com/Podcastindex-org/podcast-namespace/pull/376
